@@ -1,0 +1,5 @@
+Telescope keymaps - Ctrl + K
+Running code (Mostly C++) - Leader + R
+Neotree toggle - Ctrl + N
+Formatting - Leader + F
+Adding files - Leader + A
