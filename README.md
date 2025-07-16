@@ -56,6 +56,8 @@ Modern plugins, clean UI, powerful shortcuts — better than VSCode, no bloat.
 
 ```bash
 git clone git@github.com:shloka2598/nvim ~/.config/nvim
+```
+
 
 📚 Recommended
   Font: FiraCode Nerd Font
