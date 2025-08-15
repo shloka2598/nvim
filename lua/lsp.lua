@@ -1,8 +1,30 @@
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local caps = require("cmp_nvim_lsp").default_capabilities()
 
 lspconfig.clangd.setup({
 	capabilities = capabilities,
+})
+
+lspconfig.pyright.setup({
+	capabilities = caps,
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "basic", -- "off" | "basic" | "strict"
+				autoImportCompletions = true,
+			},
+		},
+	},
+})
+
+-- Autoformat Python files using black on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.py",
+	callback = function()
+		vim.cmd("silent !black %")
+		vim.cmd("edit") -- reload the file so you see changes
+	end,
 })
 
 vim.diagnostic.config({
