@@ -1,28 +1,28 @@
-# 💤 Shloka's Neovim Config
+# My Neovim Config
 
 A blazing-fast ⚡ and feature-rich Neovim setup built for C++ development.  
 Modern plugins, clean UI, powerful shortcuts — better than VSCode, no bloat.
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🌈 **Catppuccin** theme with beautiful UI
-- 💻 Full **LSP** support with `clangd`
-- 🤖 **Autocomplete** with `nvim-cmp`, `luasnip`, and `codeium`
-- 🧠 AI-powered completions with **Codeium**
-- 🐛 **Debugger** with `nvim-dap` + `dap-ui` + `lldb` integration
-- 🔍 Fast file/project search with **Telescope**
-- 🧭 File explorer with **Neo-tree**
-- 🧰 Floating terminal with **ToggleTerm**
-- 🧼 Autoformat on save with **conform.nvim**
-- 📌 Quick file marking with **Harpoon**
-- 🔧 Modular and lazy-loaded using **lazy.nvim**
-- 🎯 Relative + absolute line numbers, cursor line, nice UX
+- **Catppuccin** theme with beautiful UI
+- Full **LSP** support with `clangd`
+- **Autocomplete** with `nvim-cmp`, `luasnip`, and `codeium`
+- AI-powered completions with **Codeium**
+- **Debugger** with `nvim-dap` + `dap-ui` + `lldb` integration
+- Fast file/project search with **Telescope**
+- File explorer with **Neo-tree**
+- Floating terminal with **ToggleTerm**
+- Autoformat on save with **conform.nvim**
+- Quick file marking with **Harpoon**
+- Modular and lazy-loaded using **lazy.nvim**
+- Relative + absolute line numbers, cursor line, nice UX
 
 ---
 
-## 📦 Plugin Stack
+## Plugin Stack
 
 | Category       | Plugins Used |
 |----------------|--------------|
@@ -38,7 +38,7 @@ Modern plugins, clean UI, powerful shortcuts — better than VSCode, no bloat.
 
 ---
 
-## 🎯 Keybindings
+## Keybindings
 
 | Keybinding     | Action                         |
 |----------------|--------------------------------|
@@ -50,27 +50,26 @@ Modern plugins, clean UI, powerful shortcuts — better than VSCode, no bloat.
 
 ---
 
-## 🔨 Setup
+## Setup
 
-### 🔗 Clone the config
+### Clone the config
 
 ```bash
 git clone git@github.com:shloka2598/nvim ~/.config/nvim
 ```
 
 
-📚 Recommended
+Recommended
   Font: FiraCode Nerd Font
   Terminal: iTerm2 (macOS) or Alacritty
   GUI Option: Neovide for sexy animations
   Tooling: Install ripgrep for Telescope live grep
 
-🔒 License
+License
 MIT License.
 Use it. Fork it. Improve it.
-Just don’t ship it without flexing 😎.
 
-🙏 Credits
+Credits
 Thanks to:
   folke/lazy.nvim
   neovim/nvim-lspconfig
