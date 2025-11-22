@@ -1,6 +1,6 @@
 # My Neovim Config
 
-A blazing-fast ⚡ and feature-rich Neovim setup built for C++ development.  
+A blazing-fast and feature-rich Neovim setup built for C++ development.  
 Modern plugins, clean UI, powerful shortcuts — better than VSCode, no bloat.
 
 ---
