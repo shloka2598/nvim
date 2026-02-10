@@ -2,45 +2,50 @@ return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
 	config = function()
-		require("toggleterm").setup({
+		local toggleterm = require("toggleterm")
+		local Terminal = require("toggleterm.terminal").Terminal
+
+		toggleterm.setup({
 			direction = "float",
+			float_opts = {
+				border = "rounded",
+			},
+			start_in_insert = true,
 			close_on_exit = false,
-			shell = vim.o.shell,
+			shade_terminals = false,
+			persist_mode = true,
 		})
 
+		local run_term = Terminal:new({
+			direction = "float",
+			close_on_exit = false,
+			hidden = true,
+		})
+
+		vim.keymap.set("n", "<leader>t", function()
+			run_term:toggle()
+		end, { desc = "Toggle Run Terminal" })
+
 		vim.keymap.set("n", "<leader>r", function()
-			vim.cmd("write") -- save file
+			vim.cmd("write")
 
 			local file = vim.fn.expand("%:p")
 			local output = vim.fn.expand("%:p:r")
-			local ext = vim.fn.expand("%:e") -- file extension (c / cpp etc.)
+			local ext = vim.fn.expand("%:e")
 
-			-- choose compiler
-			local compiler = ""
-			local flags = ""
+			local cmd = nil
 
 			if ext == "c" then
-				compiler = "gcc"
-				flags = "-g -Wall"
+				cmd = string.format("gcc -g -Wall '%s' -o '%s' && '%s'", file, output, output)
 			elseif ext == "cpp" or ext == "cc" or ext == "cxx" then
-				compiler = "g++"
-				flags = "-g -std=c++23 -Wall"
+				cmd = string.format("g++ -g -std=c++23 -Wall '%s' -o '%s' && '%s'", file, output, output)
 			else
 				print("Unsupported file type: " .. ext)
 				return
 			end
 
-			local cmd = string.format("%s %s '%s' -o '%s' && '%s'", compiler, flags, file, output, output)
-
-			local Terminal = require("toggleterm.terminal").Terminal
-			local run_file = Terminal:new({
-				cmd = cmd,
-				direction = "float",
-				close_on_exit = false,
-				hidden = true,
-			})
-
-			run_file:toggle()
-		end, { desc = "Compile and Run C/C++" })
+			run_term:open()
+			run_term:send(cmd)
+		end, { desc = "Compile & Run (controlled)" })
 	end,
 }

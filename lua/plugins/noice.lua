@@ -1,27 +1,32 @@
 return {
 	"folke/noice.nvim",
-	event = "VeryLazy",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",
 	},
 	config = function()
+		require("notify").setup({
+			background_colour = "#0b0b14",
+			fps = 60,
+			render = "minimal",
+			stages = "fade",
+			timeout = 2000,
+		})
+
 		require("noice").setup({
 			lsp = {
-				progress = { enabled = true },
-				override = {
-					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-					["vim.lsp.util.stylize_markdown"] = true,
-					["cmp.entry.get_documentation"] = true,
+				hover = {
+					enabled = true,
+				},
+				signature = {
+					enabled = true,
 				},
 			},
 			presets = {
-				bottom_search = true, -- Classic command-line at bottom
-				command_palette = true, -- Command palette layout
+				bottom_search = false,
+				command_palette = true,
 				long_message_to_split = true,
-				lsp_doc_border = true, -- Border around LSP hover docs
 			},
 		})
-		vim.notify = require("notify")
 	end,
 }

@@ -1,5 +1,13 @@
 Telescope keymaps - Ctrl + K
+Live grep - Leader + f + g
+Finding code blocks (functions,structs etc...) - Leader + s + s
 Running code (C/C++) - Leader + R
 Neotree toggle - Ctrl + N
 Formatting - Leader + F
 Adding files - Leader + A
+Fuzzy Find - Ctrl + R
+Fix Indentation of current line - ==
+Comment Toggle - Ctrl + /
+Show Error message - Leader + e
+Hover Info - K
+Toggle term - Leader + t
